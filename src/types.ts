@@ -7,7 +7,7 @@ export type MarketSelection = {
 export type EventMarket = {
   id: string
   name: string
-  selections: MarketSelection
+  selections: MarketSelection[]
 }
 
 export type Event = {
