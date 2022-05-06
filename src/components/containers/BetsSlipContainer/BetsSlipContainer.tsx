@@ -36,11 +36,12 @@ const BetsSlipContainer: React.FC<Props> = ({ emptyListComponent }) => {
       {userHasNoBets
         ? emptyListComponent ?? null
         : userBets.map((item) => (
+          <Box key={item.id}>
             <UserBetItem
-              key={item.id}
               bet={item}
               onTapDeleteButton={handleDeleteBet}
             />
+            </Box>
           ))}
     </Box>
   );
