@@ -46,7 +46,7 @@ const DrawerLayout: React.FC<Props> = ({
       <MUIDrawer
         anchor="right"
         BackdropProps={{ onClick: closeDrawer }}
-        SlideProps={{ style: { width: "55%", maxWidth: "300px" } }}
+        SlideProps={{ style: { width: "55%", minWidth: "250px", maxWidth: "300px" } }}
         open={isDrawerOpen}
         {...rest}
       >
