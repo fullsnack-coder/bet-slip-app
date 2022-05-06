@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, Typography } from "@mui/material"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useAppSelector } from "../../../store"
@@ -18,10 +18,10 @@ const EventsListContainer: React.FC<Props> = ({ emptyListComponent }) => {
     appDispatch(getEventsAction() as any)
   }, [appDispatch])
 
-  if (status === "pending") return <p>Loading...</p>
+  if (status === "pending") return <Typography textAlign="center">Loading...</Typography>
 
   return (
-    <Box p="12px">
+    <Box p="12px" maxWidth="450px" mx="auto">
       {hasEmptyEvents ? emptyListComponent ?? null : events.map((item) => (
         <Event key={item.id} event={item} />
       ))}

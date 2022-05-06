@@ -46,7 +46,7 @@ const DrawerLayout: React.FC<Props> = ({
       <MUIDrawer
         anchor="right"
         BackdropProps={{ onClick: closeDrawer }}
-        SlideProps={{ style: { maxWidth: "85%" } }}
+        SlideProps={{ style: { width: "55%", maxWidth: "300px" } }}
         open={isDrawerOpen}
         {...rest}
       >
@@ -71,6 +71,17 @@ const DrawerLayout: React.FC<Props> = ({
         </Box>
       </MUIDrawer>
       <Navbar
+        containerProps={{
+          sx: {
+            backgroundColor: "#fff",
+            boxShadow: '0px 0px 5px #d5d5d5',
+            position: "fixed",
+            right: 0,
+            top: 0,
+            width: "100%",
+            zIndex: 9,
+          },
+        }}
         renderRight={
           <div
             role="button"
@@ -80,7 +91,7 @@ const DrawerLayout: React.FC<Props> = ({
           </div>
         }
       />
-      {children}
+      <Box pt="48px">{children}</Box>
     </drawerContext.Provider>
   );
 };
