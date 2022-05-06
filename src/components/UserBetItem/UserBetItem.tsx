@@ -14,7 +14,7 @@ const UserBetItem: React.FC<Props> = ({ bet, onTapDeleteButton }) => {
       <Typography color="#d8d8d8" variant="subtitle2" textAlign="center" gutterBottom>{marketName}</Typography>
       <Typography color="primary" textAlign="center" variant="h3">{price}</Typography>
       <Box display="flex" justifyContent="center" p="12px">
-        <Button type="button" variant="contained" onClick={() => onTapDeleteButton?.(bet)}>
+        <Button type="button" color="secondary" variant="contained" onClick={() => onTapDeleteButton?.(bet)}>
           Delete
         </Button>
       </Box>
