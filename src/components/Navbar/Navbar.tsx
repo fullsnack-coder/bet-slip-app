@@ -6,7 +6,7 @@ type Props = {
   containerProps?: BoxProps
 }
 
-const Navbar: React.FC<Props> = ({ renderLeft, renderRight, ...rest }) => {
+const Navbar: React.FC<Props> = ({ renderLeft, renderRight, containerProps }) => {
   return (
     <Box
       component="header"
@@ -14,7 +14,7 @@ const Navbar: React.FC<Props> = ({ renderLeft, renderRight, ...rest }) => {
       flexDirection="row"
       justifyContent="space-between"
       p="12px"
-      {...rest}
+      {...containerProps}
     >
       {renderLeft || <span />}
       <Box data-testid="navbar-separator" width="20px" />
