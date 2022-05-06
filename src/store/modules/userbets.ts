@@ -15,11 +15,12 @@ const initialState: State = {
 }
 
 // action creators
-const userbetsAdd = (selection: UserBet): StoreAction => ({
+export const userbetsAdd = (selection: UserBet): StoreAction => ({
   type: actionTypes.USERBETS_ADD,
   payload: { selection },
 })
-const userbetsRemove = (selection: UserBet): StoreAction => ({
+
+export const userbetsRemove = (selection: UserBet): StoreAction => ({
   type: actionTypes.USERBETS_REMOVE,
   payload: { selection },
 })

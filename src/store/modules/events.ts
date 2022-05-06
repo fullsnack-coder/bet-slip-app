@@ -42,7 +42,8 @@ export const getEventsAction =
     try {
       dispatch(getEventsStart())
       const events = await eventsAPI().getEvents()
-      dispatch(getEventsSuccess(events))
+      const eventsWithMarkets = events.filter(({ markets }) => markets.length > 0)
+      dispatch(getEventsSuccess(eventsWithMarkets))
       onSuccess?.()
     } catch (error) {
       dispatch(getEventsFailure())
