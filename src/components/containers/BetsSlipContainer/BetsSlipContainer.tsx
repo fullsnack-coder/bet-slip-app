@@ -22,7 +22,17 @@ const BetsSlipContainer: React.FC<Props> = ({ emptyListComponent }) => {
   );
 
   return (
-    <Box component="main" pt="48px" px="12px" bgcolor="#f1f1f1" height="100%" minWidth="280px">
+    <Box
+      component="main"
+      pt="48px"
+      px="12px"
+      bgcolor="#f1f1f1"
+      height="100%"
+      minWidth="200px"
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+    >
       {userHasNoBets
         ? emptyListComponent ?? null
         : userBets.map((item) => (
