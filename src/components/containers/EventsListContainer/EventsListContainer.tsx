@@ -18,7 +18,7 @@ const EventsListContainer: React.FC<Props> = ({ emptyListComponent }) => {
     appDispatch(getEventsAction() as any)
   }, [appDispatch])
 
-  if (status === "pending") return <Typography textAlign="center">Loading...</Typography>
+  if (status === "pending") return <Typography sx={{ py: '22px' }} textAlign="center">Loading...</Typography>
 
   return (
     <Box p="12px" maxWidth="450px" mx="auto">
