@@ -1,9 +1,18 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useEffect, useState } from "react"
+import logo from "./logo.svg"
+import "./App.css"
+import { eventsAPI } from "./services"
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    eventsAPI()
+      .getEvents()
+      .then((results) => {
+        console.log({ results })
+      })
+  }, [])
 
   return (
     <div className="App">
@@ -27,7 +36,7 @@ function App() {
           >
             Learn React
           </a>
-          {' | '}
+          {" | "}
           <a
             className="App-link"
             href="https://vitejs.dev/guide/features.html"
