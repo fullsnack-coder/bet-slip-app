@@ -18,4 +18,5 @@ export type Event = {
 
 export type UserBet = MarketSelection & {
   marketName: string
+  eventId: string
 }
